@@ -1,0 +1,86 @@
+﻿<Window x:Class="HChiep.Place.wpf_place"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HChiep.Place"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="500">
+    <Grid Height="400" Width="500">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <!-- First GroupBox -->
+        <GroupBox Header="Beam Info" HorizontalAlignment="Center" VerticalAlignment="Center" Width="450">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="Beam :" Margin="0,0,10,27" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                <ComboBox DisplayMemberPath="Name" x:Name="cbb_beaminfo"  Grid.Row="0" Grid.Column="1" Margin="150,0,0,5" ItemsSource="{Binding BeamTypes}" SelectedItem="{Binding SelectedBeamType}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Level :" Margin="0,0,10,27" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                <ComboBox DisplayMemberPath="Name" x:Name="cbb_beamlv"  Grid.Row="1" Grid.Column="1" Margin="150,0,0,5" ItemsSource="{Binding Levels}" SelectedItem="{Binding SelectedBeamLevel}"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Length :" Margin="0,0,10,27" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                <TextBox x:Name="txt_beamlength" Grid.Row="2" Grid.Column="1" Margin="150,0,0,5" Text="{Binding Length}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Content="Offset :" Margin="0,0,10,0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                <TextBox x:Name="txt_offset"  Grid.Row="3" Grid.Column="1" Margin="150,0,0,5" Text="{Binding Offset}"/>
+
+
+            </Grid>
+        </GroupBox>
+
+        <!-- Second GroupBox -->
+        <GroupBox Header="Column Info" HorizontalAlignment="Center" VerticalAlignment="Center" Width="450" Grid.Row="1">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="Column :" Margin="0,0,10,0"/>
+                <ComboBox DisplayMemberPath="Name" x:Name="cbb_clinfo" Grid.Row="0" Grid.Column="1" Margin="65,0,0,5" ItemsSource="{Binding ColumnTypes}" SelectedItem="{Binding SelectedColumnType}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Base Level :" Margin="0,0,10,0"/>
+                <ComboBox DisplayMemberPath="Name" x:Name="cbb_baselv" Grid.Row="1" Grid.Column="1" Margin="65,0,0,5" ItemsSource="{Binding Levels}" SelectedItem="{Binding SelectedBaseLevel}"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Top Level :" Margin="0,0,10,0"/>
+                <ComboBox DisplayMemberPath="Name" x:Name="cbb_toplv" Grid.Row="2" Grid.Column="1" Margin="65,0,0,5" ItemsSource="{Binding Levels}" SelectedItem="{Binding SelectedTopLevel}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Content="Base Offset :" Margin="0,0,10,0"/>
+                <TextBox x:Name="txt_baseof" Grid.Row="3" Grid.Column="1" Margin="65,0,0,5" Text="{Binding BaseOffset, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Label Grid.Row="4" Grid.Column="0" Content="Top Offset :" Margin="0,0,10,0"/>
+                <TextBox x:Name="txt_topof" Grid.Row="4" Grid.Column="1" Margin="65,0,0,5" Text="{Binding TopOffset, UpdateSourceTrigger=PropertyChanged}"/>
+
+            </Grid>
+        </GroupBox>
+
+        <Button x:Name="btn_cancel"  Content="Cancel"  Grid.Row="3" Height="20" Width="70" Margin="320,13,10,-13"/>
+        <Button x:Name="btn_beam" Content="Beam" Grid.Row="3" Height="20" Width="70" Margin="245,13,85,-13" Command="{Binding PlaceBeamCommand}"/>
+        <Button x:Name="btn_column" Content="Column" Grid.Row="2" Height="20" Width="70" Margin="220,13,210,-13" Command="{Binding PlaceColumnCommand}"/>
+    </Grid>
+</Window>

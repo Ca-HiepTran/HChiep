@@ -1,0 +1,98 @@
+﻿<Window x:Class="HChiep.wpf_setting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HChiep"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="400"
+             Title="Settings"
+            SizeToContent="WidthAndHeight">
+    <Grid Width="400" Height="350">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <!-- First GroupBox -->
+        <GroupBox Header="Wall Utils" HorizontalAlignment="Center" VerticalAlignment="Center" Width="380">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="51.913"/>
+                    <ColumnDefinition Width="52.85"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="External Tag :" Margin="0,0,10,27" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                <ComboBox x:Name="extagcbb"  Grid.Row="0" Grid.Column="2" Margin="80,0,0,5"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Internal Tag :" Margin="0,0,10,27" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                <ComboBox x:Name="intagcbb" Grid.Row="1" Grid.Column="2" Margin="80,0,0,5"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Error Tag Color :" Margin="0,0,10,0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                <ComboBox x:Name="errorcbb"  Grid.Row="2" Grid.Column="2" Margin="80,0,0,5"/>
+
+
+            </Grid>
+        </GroupBox>
+
+        <!-- Second GroupBox -->
+        <GroupBox Header="Door Utils" HorizontalAlignment="Center" VerticalAlignment="Center" Width="380" Grid.Row="1">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="Source Room Parameter :" Margin="0,0,10,0"/>
+                <ComboBox x:Name="roomparacbb" Grid.Row="0" Grid.Column="1" Margin="30,0,0,5"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Target Door Parameter :" Margin="0,0,10,0"/>
+                <ComboBox x:Name="doorparacbb" Grid.Row="1" Grid.Column="1" Margin="30,0,0,5"/>
+
+
+            </Grid>
+        </GroupBox>
+
+        <!-- Third GroupBox -->
+        <GroupBox Header="Room Utils" HorizontalAlignment="Center" VerticalAlignment="Center" Width="380" Grid.Row="2">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="Target Room Parameter :" Margin="0,0,10,0"/>
+                <ComboBox x:Name="tarroomparacbb" Grid.Row="0" Grid.Column="1" Margin="35,0,0,5"/>
+
+
+            </Grid>
+        </GroupBox>
+
+        <Button x:Name="cancelbtn"  Content="Cancel"  Grid.Row="3" Height="20" Width="70" Margin="320,13,10,-13"/>
+        <Button x:Name="savebtn" Content="Save" Grid.Row="3" Height="20" Width="70" Margin="245,13,85,-13"/>
+
+
+    </Grid>
+</Window>

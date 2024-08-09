@@ -1,0 +1,15 @@
+﻿<Window x:Class="HChiep.Wall_Create.CFcreatewall"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HChiep.Wall_Create"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="400">
+    <Grid MaxHeight="300" MaxWidth="400">
+        <Label FontSize="30" Content="Tường đã tồn tại !!!"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,44,0,0"/>
+        <Button x:Name="btn_wccancel" Content="Hủy" HorizontalAlignment="Left" Margin="238,200,0,0" VerticalAlignment="Top" Height="39" Width="94" Click="btn_wccancel_Click"/>
+        <Button x:Name="btn_wcoverlap" Content="Ghi đè" HorizontalAlignment="Left" Margin="68,200,0,0" VerticalAlignment="Top" Height="39" Width="94" Click="btn_wcoverlap_Click"/>
+
+    </Grid>
+</Window>

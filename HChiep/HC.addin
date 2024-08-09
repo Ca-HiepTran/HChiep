@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>HChiep</Name>
+		<Assembly>"C:\Users\MSI LAPTOP\source\repos\HChiep\HChiep\bin\Debug\HChiep.dll"</Assembly>
+		<ClientId>{DC07F9F0-892F-4339-AEF5-F9F0420AD86E}</ClientId>
+		<FullClassName>HChiep.Main</FullClassName>
+		<VendorId>TTH-240401</VendorId>
+		<VendorDescription>Trần Thế Hiệp</VendorDescription>
+	</AddIn>
+</RevitAddIns>
